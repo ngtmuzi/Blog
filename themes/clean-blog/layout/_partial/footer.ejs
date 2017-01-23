@@ -17,6 +17,33 @@
                         </li>
                     <% } %>
 
+                    <% if (theme.acfun_url) { %>
+                    <li>
+                        <a href="<%- theme.acfun_url%>" target="_blank">
+                                <span class="fa fa-play fa-lg">
+                                </span>
+                        </a>
+                    </li>
+                    <% } %>
+
+                    <% if (theme.bili_url) { %>
+                    <li>
+                        <a href="<%- theme.bili_url %>" target="_blank">
+                                <span class="fa fa-stop fa-lg">
+                                </span>
+                        </a>
+                    </li>
+                    <% } %>
+
+                    <% if (theme.ytb_url) { %>
+                    <li>
+                        <a href="<%- theme.ytb_url %>" target="_blank">
+                                <span class="fa fa-youtube fa-lg">
+                                </span>
+                        </a>
+                    </li>
+                    <% } %>
+
                     <% if (theme.facebook_url) { %>
                         <li>
                             <a href="<%- theme.facebook_url%>" target="_blank">

@@ -7,32 +7,19 @@ menu:
 menu_title: ngtmuzi
 
 # URL of the Home page image
-index_cover: /img/home-bg.jpg
+index_cover: http://p1.bqimg.com/4851/7ae3129e66d21068.jpg
 
 # Default post title
 default_post_title: 无标题
 
-# Comments. Choose one by filling up the information
-comments:
-  # Disqus comments
-  disqus_shortname:
-  # Facebook comments
-  facebook:
-    appid:
-    comment_count: 5
-    comment_colorscheme: light
-
-# Google Analytics Tracking ID
-google_analytics:
-
-# Addthis ID
-addthis:
-
 # set your own favicon
-favicon:
+favicon: /favicon.ico
 
 # Social Accounts
-twitter_url:
+acfun_url: http://www.acfun.cn/u/ngtmuzi
+bili_url: http://space.bilibili.com/1772234
+ytb_url: https://www.youtube.com/channel/UCCWrMEHE94DBUTmhz2eflVg
+twitter_url: https://twitter.com/ngtmuzi
 twitter_handle:
 facebook_url:
 github_url: https://github.com/ngtmuzi
