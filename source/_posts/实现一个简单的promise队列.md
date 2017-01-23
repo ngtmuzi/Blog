@@ -17,8 +17,8 @@ category: 神秘代码
 * 队列本身要有节流功能，即可以控制同一时间内在运行的`promise`数量，参考`bluebird`的`map`函数中的concurrency(并发)字段。
 
 　　其实大体思路就是模仿bluebird中的map函数，不同点在于map是处理一个固定的数组，且会结束（当然可以动态地修改该数组，但不推荐），而队列会一直待机处理（伪，实际是队列有改动时才做检查）  
-于是完成代码：[promiseQueue.js](https://github.com/ngtmuzi/wheel/blob/master/tools/promiseQueue.js)
-运行起来的感觉类似这样
+　　于是完成代码：[promiseQueue.js](https://github.com/ngtmuzi/wheel/blob/master/tools/promiseQueue.js)  
+　　运行起来的感觉类似这样
 ```javascript
 const a = Queue(2);
 const delay = () => Promise.delay(1000,new Date());
