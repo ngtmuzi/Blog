@@ -70,3 +70,12 @@ theme:  clean-blog
 deploy:
   type: git
   repo: https://github.com/ngtmuzi/ngtmuzi.github.io.git
+
+feed:
+  type: rss2
+  path: rss2.xml
+  limit: 20
+  hub:
+
+sitemap:
+  path: sitemap.xml
