@@ -107,3 +107,7 @@ db.collection('something').find().toArray()[0].somekey
 
 
 综上，这个模块还有许多待发现的可用之处，我个人也将它用于了生产环境中，[npm地址](https://www.npmjs.com/package/promixy)，如果你有任何建议或发现了bug，欢迎到[github](https://github.com/ngtmuzi/promixy)反馈
+
+## 2017-07-04补充
+
+Node7.6之后的版本原生支持`async/await`，建议直接使用这个特性

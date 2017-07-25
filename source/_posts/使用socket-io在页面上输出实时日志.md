@@ -108,7 +108,7 @@ function watchStream(stream) {
 
 前端页面为了方便渲染非常多行的元素，使用的是vue，代码就不贴了，最终效果如下
 
-![](https://i2.muimg.com/1949/c9d8ce0256097837.jpg)
+![](/img/webshell_1.png)
 
 ### 总结
 
