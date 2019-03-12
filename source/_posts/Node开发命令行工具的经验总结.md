@@ -15,13 +15,15 @@ tags:
 近半年接手了一个非web开发类的工作，一直跟数据、数据库和脚本打交道，原项目是windows服bat脚本和.NET命令行程序来跑各种任务的。之前我没有太接触过shell这块，碰到这些bat脚本确实有点把我难到了，各方面相比bash来说还是有很大差距，于是我着手开始做迁移工作
 
 这里推荐一个简单的bash入门教程
-> [bash-handbook: 谨以此文档献给那些想学习Bash又无需钻研太深的人。](https://github.com/denysdovhan/bash-handbook/blob/master/translations/zh-CN/README.md)
+
+> [bash-handbook](https://github.com/denysdovhan/bash-handbook/blob/master/translations/zh-CN/README.md)
 
 而复杂逻辑的exe部分，还是用我熟悉的node.js来重构，在此之前我还没有过命令行的开发经验，算是摸着石头过河
 
 ### 参考资料
 
-> [Node.js 命令行程序开发教程-阮一峰](http://www.ruanyifeng.com/blog/2015/05/command-line-with-node.html)
+> [Node.js 命令行程序开发教程](http://www.ruanyifeng.com/blog/2015/05/command-line-with-node.html)
+
 > [node.js 命令行工具(cli)](https://juejin.im/post/5af2a2cbf265da0b9c109f59)
 
 ## 开发
@@ -72,11 +74,11 @@ tags:
 ```javascript
 log4js.configure({
   appenders: { err: { type: 'stderr' } },
-  categories: { default: { appenders: ['err'], level: 'ERROR' } }
+  categories: { default: { appenders: ['err'], level: 'all' } }
 });
 ```
 
-> [文档](https://log4js-node.github.io/log4js-node/stderr.html)
+> [log4js文档](https://log4js-node.github.io/log4js-node/stderr.html)
 
 ### 注意等待输出流写完成再关闭进程
 
@@ -93,7 +95,7 @@ log4js.configure({
   log4js.shutdown(cb);
 ```
 
-最好的情况是不写`process.exit`，只要记得`ws.end()`结束写入就行，当活动的流全部完成，文件句柄释放后，进程自己会退出
+最好的情况是不写`process.exit`，只要记得`ws.end()`结束写入就行，当活动的流（包括标准输出流）全部完成，文件句柄释放后，进程自己会退出
 
 ### 使用更大的内存
 
@@ -105,7 +107,7 @@ node.js使用的v8引擎默认堆内存上限约1.7GB，而在环境变量中加
 
 ### 对CSV做SQL查询
 
-有些复杂的业务需求需要对文件做数据统计汇总，原先是用[lodash](https://www.npmjs.com/package/lodash)的一套函数来处理，但未免还是有些繁复喊难以阅读，后来引入了[alasql](https://www.npmjs.com/package/alasql)，支持流式地对文件进行sql查询，甚至支持连表语法，我目前也还在初步尝试阶段，有相关需求的可以了解下
+有些复杂的业务需求需要对文件做数据统计汇总，原先是用[lodash](https://www.npmjs.com/package/lodash)的一套函数来处理，但未免还是有些繁复和难以阅读，后来引入了[alasql](https://www.npmjs.com/package/alasql)，支持流式地对文件进行sql查询，甚至支持连表语法，我目前也还在初步尝试阶段，有相关需求的可以了解下
 
 ## 总结
 
